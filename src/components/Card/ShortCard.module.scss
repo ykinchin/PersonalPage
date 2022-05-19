@@ -1,0 +1,44 @@
+.card {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 20px 30px;
+  height: max-content;
+  background-color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid rgb(167, 176, 72);
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    .company {
+      font-size: 1.5rem;
+    }
+
+    .vacancy {
+      font-size: 2rem;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .location {
+      font-size: 1.5rem;
+    }
+  }
+
+  .description {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    max-height: 4rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .salary {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}

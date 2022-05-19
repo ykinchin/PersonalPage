@@ -1,0 +1,114 @@
+.detailedCard {
+  border: 2px solid rgb(167, 176, 72);
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  cursor: default;
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+      "vac btn"
+      "comp ."
+      "loc ."
+      "sal .";
+
+    .vacancy {
+      grid-area: vac;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .company {
+      grid-area: comp;
+    }
+
+    .location {
+      grid-area: loc;
+    }
+
+    .salary {
+      grid-area: sal;
+    }
+
+    .buttons {
+      grid-area: btn;
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      *:hover{
+        cursor: pointer;
+      }
+
+      .applyBtn {
+        cursor: pointer;
+        width: max-content;
+        border: 1px solid transparent;
+        box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.65);
+        border-radius: 8px;
+        padding: 5px 20px;
+        font-weight: bold;
+  
+        &:hover {
+          background-color: rgb(255, 255, 255);
+          border: 1px solid rgb(167, 176, 72);
+          transition: 0.3s ease;
+        }
+      }
+
+      .followBtn {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: rgb(167, 176, 72);
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 1.2rem;
+
+    .descriptionTitle {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .type {
+      margin: 5px 0 10px;
+      .typeTitle {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+    }
+
+    .requirements {
+      margin-bottom: 10px;
+
+      .requirementsTitle {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+    }
+
+    .responsibilities {
+      margin-bottom: 10px;
+
+      .responsibilitiesTitle {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

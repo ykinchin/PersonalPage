@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+import { publicRoutes, privateRoutes } from "./router/routes";
+import AuthRequire from "./hoc/AuthRequire";
 
 function App() {
+  const privatePages = privateRoutes.map((route) => (
+    <Route
+      element={<AuthRequire>{route.element}</AuthRequire>}
+      path={route.path}
+      key={route.path}
+    />
+  ));
+
+  const publicPages = publicRoutes.map((route) => (
+    <Route element={route.element} path={route.path} key={route.path} />
+  ));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Routes>
+        {privatePages}
+        {publicPages}
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.sidebar {
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  padding: 0;
+
+  .list {
+    text-align: center;
+
+    &>* {
+      padding: 10px 15px;
+      border: 1px solid black;
+    }
+
+    .logout {
+      margin-top: 15px;
+    }
+  }
+}

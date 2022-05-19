@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 40px;
+    font-size: 1.5rem;
+    gap: 20px;
+
+    * {
+      border: none;
+      outline: none;
+    }
+
+    .jobSalary {
+      display: flex;
+      gap: 20px;
+      font-weight: bold;
+      font-size: 2rem;
+      justify-content: space-between;
+      border: none;
+
+      .salary {
+        width: 100px;
+      }
+    }
+
+    .select {
+      width: max-content;
+    }
+
+    .description {
+      resize: vertical;
+    }
+
+    .btn {
+      border: 1px solid black;
+      width: max-content;
+      align-self: center;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+  }
+}

@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { publicRoutes, privateRoutes } from "./router/routes";
+
+import './App.css'
 import AuthRequire from "./hoc/AuthRequire";
 
 function App() {

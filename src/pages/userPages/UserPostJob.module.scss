@@ -2,9 +2,51 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+
+  .success {
+    border: 3px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    gap: 40px;
+    padding: 50px;
+
+    .icon {
+      font-size: 3rem;
+      color: green;
+    }
+
+    .navBtn {
+      font-size: 1.5rem;
+      border: 1px solid black;
+      width: max-content;
+      align-self: center;
+      padding: 10px 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        border: 1px solid rgb(167, 176, 72);
+        background-color: rgba(167, 176, 72, 0.3);
+        transform: scale(1.1);
+        transition: 0.3s ease;
+      }
+    }
+  }
 
   .title {
-    font-size: 2.5rem;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    font-size: 2rem;
+    align-self: center;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    cursor: default;
   }
 
   .form {
@@ -23,7 +65,6 @@
     .jobSalary {
       display: flex;
       gap: 20px;
-      font-weight: bold;
       font-size: 2rem;
       justify-content: space-between;
       border: none;
@@ -35,6 +76,7 @@
 
     .select {
       width: max-content;
+      cursor: pointer;
     }
 
     .description {
@@ -47,6 +89,12 @@
       align-self: center;
       padding: 10px 20px;
       font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid rgb(167, 176, 72);
+        background-color: rgba(167, 176, 72, 0.3);
+      }
     }
   }
 }

@@ -13,9 +13,9 @@
     gap: 10px;
     grid-template-areas:
       "vac btn"
+      "sal ."
       "comp ."
-      "loc ."
-      "sal .";
+      "loc .";
 
     .vacancy {
       grid-area: vac;
@@ -42,28 +42,18 @@
       align-items: center;
       gap: 20px;
 
-      *:hover{
+      *:hover {
         cursor: pointer;
       }
 
-      .applyBtn {
-        cursor: pointer;
-        width: max-content;
-        border: 1px solid transparent;
-        box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.1);
-        background-color: rgba(255, 255, 255, 0.65);
-        border-radius: 8px;
-        padding: 5px 20px;
-        font-weight: bold;
-  
-        &:hover {
-          background-color: rgb(255, 255, 255);
-          border: 1px solid rgb(167, 176, 72);
-          transition: 0.3s ease;
-        }
+      .removeBtn {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        color: rgb(167, 176, 72);
       }
 
-      .followBtn {
+      .addBtn {
         font-size: 2rem;
         display: flex;
         align-items: center;

@@ -28,9 +28,13 @@ const Login = () => {
       );
       console.log(user);
       dispatch(authActions.login(loginEmail));
-      navigate("/", { replace: true });
+      navigate("/");
     } catch (error) {
-      console.log(error.message);
+      if (error.message === "Firebase: Error (auth/invalid-email).") {
+        alert("Invalid login or passward.\nPlease try again");
+      } else {
+        alert("Someting went wrong. \nPlease try again");
+      }
     }
   };
 
@@ -43,32 +47,32 @@ const Login = () => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Login</h1>
-        <form onSubmit={onSubmitHandler}>
-          <div className={styles.inputs}>
-            <input
-              type='text'
-              placeholder='email'
-              onChange={(event) => {
-                setLoginEmail(event.target.value);
-              }}
-            />
-            <input
-              type='text'
-              placeholder='password'
-              onChange={(event) => {
-                setLoginPassword(event.target.value);
-              }}
-            />
-          </div>
-          <div className={styles.btns}>
-            <button className={styles.action} onClick={login}>
-              Log In
-            </button>
-            <button className={styles.nav}>
-              <Link to='/registration'>Register</Link>
-            </button>
-          </div>
-        </form>
+      <form onSubmit={onSubmitHandler}>
+        <div className={styles.inputs}>
+          <input
+            type='text'
+            placeholder='email'
+            onChange={(event) => {
+              setLoginEmail(event.target.value);
+            }}
+          />
+          <input
+            type='password'
+            placeholder='password'
+            onChange={(event) => {
+              setLoginPassword(event.target.value);
+            }}
+          />
+        </div>
+        <div className={styles.btns}>
+          <button className={styles.action} onClick={login}>
+            Log In
+          </button>
+          <button className={styles.nav}>
+            <Link to='/registration'>Register</Link>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

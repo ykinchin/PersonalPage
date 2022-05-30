@@ -20,7 +20,6 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <ul className={styles.list}>
-        <li> <Link to='/user/profile'>My profile</Link></li>
         <li> <Link to='/user/cvs'>My CVs</Link></li>
         <li><Link to='/user/followed-jobs'>Followed jobs</Link></li>
         <li><Link to='/user/post-a-job'>Post a Job</Link></li>

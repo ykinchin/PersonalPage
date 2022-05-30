@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import styles from "./SearchBar.module.scss";
+import { jobSearchActions } from "../../store/reducers/search-slice";
 
 const SearchBar = () => {
+  const disputch = useDispatch();
+
+  const onChangeHandler = (e) => {
+    disputch(jobSearchActions.setSearchResult(e));
+  };
+
   return (
-    <div className={styles.wrapper}>
-      <input type='text' placeholder='job title, keywords, or company' />
-      <button className={styles.btn}>Find a job</button>
-    </div>
+    <form
+      className={styles.wrapper}
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
+      <input
+        type='text'
+        placeholder='job title, company'
+        onChange={(e) => onChangeHandler(e.target.value)}
+      />
+    </form>
   );
 };
 

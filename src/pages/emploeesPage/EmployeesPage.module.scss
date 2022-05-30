@@ -1,0 +1,46 @@
+.wrapper {
+  border: 1px solid black;
+  margin-bottom: 3%;
+  width: 60%;
+  padding: 2% 5%;
+  display: grid;
+  gap: 10px 30px;
+  grid-template-columns: 63% 37%;
+  grid-template-areas:
+    "name pos"
+    "desc skills"
+    "desc ."
+    "desc contacts";
+
+  .name {
+    grid-area: name;
+  }
+
+  .position {
+    align-self: flex-end;
+    grid-area: pos;
+  }
+
+  .skills {
+    grid-area: skills;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+    gap: 5px;
+
+    * {
+      box-shadow: 0 0 0 1px black;
+      padding: 3px 5px;
+    }
+  }
+
+  .description {
+    grid-area: desc;
+    padding: 15px 15px 0 0;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+  }
+
+  .contacts {
+    grid-area: contacts;
+  }
+}

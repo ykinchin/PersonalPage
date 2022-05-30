@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ShortCard.module.scss";
 import { firestore } from "../../firebase-config";
@@ -23,9 +23,17 @@ const ShortCard = () => {
     getJobs();
   }, []);
 
+  const searchResult = useSelector((state) => state.search.searchResult);
+  const filteredCards = jobs.filter((job) => {
+    return (
+      job.company.toLowerCase().includes(searchResult.toLowerCase()) ||
+      job.jobTitle.toLowerCase().includes(searchResult.toLowerCase())
+    );
+  });
+
   return (
     <>
-      {jobs.map((job) => {
+      {filteredCards.map((job) => {
         return (
           <div
             className={styles.card}
@@ -38,10 +46,7 @@ const ShortCard = () => {
               <h3 className={styles.location}>{job.location}</h3>
             </div>
             <div className={styles.description}>{job.description}</div>
-            <div className={styles.salary}>
-              {job.salary}
-              {job.id}
-            </div>
+            <div className={styles.salary}>{job.salary}</div>
           </div>
         );
       })}

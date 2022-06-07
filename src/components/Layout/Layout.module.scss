@@ -1,18 +1,24 @@
+@import "../../media";
+
 .wrapper {
-    width: 100%;
-    height: max-content;
-    min-height: 88%;
+  width: 100%;
+  height: max-content;
+  min-height: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  background-color: rgba(182, 181, 181, 0.424);
+
+  .main {
+    margin-bottom: 70px;
+    padding: 0 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
-    background-color: rgba(182, 181, 181, 0.424);
 
-    .main {
-        width: 70%;
-        margin-bottom: 70px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    @include m {
+      padding: 0;
     }
+  }
 }

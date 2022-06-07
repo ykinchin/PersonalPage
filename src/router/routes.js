@@ -1,3 +1,4 @@
+import AddedResume from "../components/AddedResume/AddedResume";
 import LoginPage from "../pages/authPages/LoginPage";
 import RegisterPage from "../pages/authPages/RegisterPage";
 import EmploeesPage from "../pages/emploeesPage/EmploeesPage";
@@ -16,7 +17,8 @@ export const publicRoutes = [
 ];
 
 export const privateRoutes = [
-  { path: "/user/cvs", element: <UserCvPage /> },
+  { path: "/user/post-cv", element: <UserCvPage /> },
+  { path: "/user/cvs", element: <AddedResume /> },
   { path: "/user/followed-jobs", element: <UserJobs /> },
   { path: "/user/post-a-job", element: <UserPostJob /> },
 ];

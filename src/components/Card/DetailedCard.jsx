@@ -6,7 +6,6 @@ import { collection, getDocs } from "firebase/firestore";
 import styles from "./DetailedCard.module.scss";
 import { firestore } from "../../firebase-config";
 import { jobIdActions } from "../../store/reducers/jobId-slice";
-import Modal from "../Modal/Modal";
 
 const DetailedCard = () => {
   const [detailedCard, setDetailedCard] = useState([]);
@@ -58,7 +57,7 @@ const DetailedCard = () => {
               ) : null}
             </div>
             <div className={styles.description}>
-              <h2 className={styles.descriptionTitle}>Full description</h2>
+              <h2 className={styles.descriptionTitle}>Description</h2>
               <div className={styles.type}>
                 <p className={styles.typeDescription}>{job.jobType}</p>
               </div>

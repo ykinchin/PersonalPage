@@ -1,8 +1,14 @@
+@import "../../media";
+
 .cardList {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 10px;
+
+  @include s {
+    display: block;
+  }
 
   .shortCards {
     display: flex;
@@ -11,14 +17,30 @@
     overflow-y: auto;
     height: 70vh;
     padding-right: 5px;
+
+    @include s {
+      display: block;
+      height: 100%;
+      margin-bottom: 10px;
+    }
   }
 
   .detailedCards {
     height: max-content;
+
+    @include s {
+      display: none;
+      height: 100%;
+      overflow-y: visible;
+    }
   }
 
   ::-webkit-scrollbar {
     width: 8px;
+
+    @include s {
+      display: none;
+    }
   }
 
   ::-webkit-scrollbar-track {

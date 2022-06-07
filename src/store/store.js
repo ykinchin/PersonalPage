@@ -13,6 +13,7 @@ import storage from "redux-persist/lib/storage";
 
 import authSlice from "./reducers/auth-slice";
 import jobIdSlice from "./reducers/jobId-slice";
+import resumeSlice from "./reducers/resume-slice";
 import jobSearchSlice from "./reducers/search-slice";
 import skillsSlice from "./reducers/skills-slice";
 import userContactSlice from "./reducers/userContact-slice";
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   search: jobSearchSlice.reducer,
   skills: skillsSlice.reducer,
   contacts : userContactSlice.reducer,
+  resume: resumeSlice.reducer,
 });
 
 const persistConfig = {

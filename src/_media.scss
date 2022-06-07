@@ -1,0 +1,23 @@
+$media: (
+    "m":475px,
+    "s":768px,
+    "x":1024px,
+);
+
+@mixin m {
+    @media (max-width: map-get($media, "m")) {
+        @content;
+    }
+}
+
+@mixin s {
+    @media (max-width: map-get($media, "s")) {
+        @content;
+    }
+}
+
+@mixin x {
+    @media (max-width: map-get($media, "x")) {
+        @content;
+    }
+}

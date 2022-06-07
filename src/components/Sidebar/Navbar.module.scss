@@ -1,28 +1,15 @@
-@import "../../media";
-
 .sidebar {
   border: 2px solid black;
   background-color: rgba(1, 5, 6, 0.899);
   color: white;
   position: absolute;
-  top: 45px;
+  top: 95px;
   left: 15px;
   padding: 0;
   z-index: 2;
 
   .list {
     text-align: center;
-
-    .userName {
-      display: none;
-      color: rgb(167, 176, 72);
-      border-bottom: 1px solid rgb(167, 176, 72);
-      cursor: default;
-
-      @include s {
-        display: block;
-      }
-    }
 
     & > * {
       padding: 10px 15px;
@@ -34,9 +21,5 @@
         color: rgb(167, 176, 72);
       }
     }
-  }
-
-  @include s {
-    left: -140px;
   }
 }

@@ -26,8 +26,6 @@ const UserJobs = () => {
     getJobs();
   }, []);
 
- 
-
   return (
     <>
       <Layout>

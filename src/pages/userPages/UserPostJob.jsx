@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { BsFillCheckCircleFill } from "react-icons/bs";
 
 import styles from "./UserPostJob.module.scss";
 import Layout from "../../components/Layout/Layout";
 import { firestore } from "../../firebase-config";
-import { Link } from "react-router-dom";
+import PostedSuccess from "../../components/PostedSuccess/PostedSuccess";
 
 const UserPostJob = () => {
   const [isPosted, setIsPosted] = useState(false);
@@ -19,7 +18,7 @@ const UserPostJob = () => {
   const [description, setDescription] = useState("");
 
   async function addJob() {
-    if ((company && jobTitle && contact !== "")) {
+    if (company && jobTitle && contact !== "") {
       try {
         const job = await addDoc(collection(firestore, "jobs"), {
           company,
@@ -42,13 +41,12 @@ const UserPostJob = () => {
     <Layout>
       <div className={styles.wrapper}>
         {isPosted ? (
-          <div className={styles.success}>
-            <BsFillCheckCircleFill className={styles.icon} /> Your job has been
-            successfully posted
-            <Link to='/' className={styles.navBtn}>
-              Jobs list
-            </Link>
-          </div>
+          <PostedSuccess
+            text='Your job has been
+                successfully posted'
+            linkName='Jobs list'
+            link='/'
+          />
         ) : (
           <>
             <h1 className={styles.title}>Post a Job</h1>
@@ -66,7 +64,6 @@ const UserPostJob = () => {
                 placeholder='Company*'
                 onChange={(event) => setCompany(event.target.value)}
               />
-
               <div className={styles.jobSalary}>
                 <input
                   className={styles.job}
@@ -82,7 +79,6 @@ const UserPostJob = () => {
                   onChange={(event) => setSalary(event.target.value)}
                 />
               </div>
-
               <input
                 className={styles.location}
                 type='text'
@@ -96,7 +92,6 @@ const UserPostJob = () => {
                 placeholder='Contact*'
                 onChange={(event) => setContact(event.target.value)}
               />
-
               <select
                 className={styles.select}
                 name='Job type'
@@ -112,7 +107,6 @@ const UserPostJob = () => {
                 placeholder='Job description'
                 onChange={(event) => setDescription(event.target.value)}
               ></textarea>
-
               <button className={styles.btn} onClick={addJob}>
                 Add a job
               </button>

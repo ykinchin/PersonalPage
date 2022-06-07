@@ -1,3 +1,5 @@
+@import "../../media";
+
 .detailedCard {
   border: 2px solid rgb(167, 176, 72);
   background-color: rgba(255, 255, 255, 0.65);
@@ -21,14 +23,26 @@
       grid-area: vac;
       font-size: 2.5rem;
       font-weight: bold;
+
+      @include x {
+        font-size: 1.5rem;
+      }
     }
 
     .company {
       grid-area: comp;
+
+      @include x {
+        font-size: 1.2rem;
+      }
     }
 
     .location {
       grid-area: loc;
+
+      @include x {
+        font-size: 1.2rem;
+      }
     }
 
     .salary {
@@ -71,33 +85,18 @@
     .descriptionTitle {
       font-size: 2rem;
       font-weight: bold;
+
+      @include x {
+        font-size: 1.2rem;
+      }
     }
 
     .type {
       margin: 5px 0 10px;
+
       .typeTitle {
         font-size: 1.2rem;
         margin-bottom: 5px;
-      }
-    }
-
-    .requirements {
-      margin-bottom: 10px;
-
-      .requirementsTitle {
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-      }
-    }
-
-    .responsibilities {
-      margin-bottom: 10px;
-
-      .responsibilitiesTitle {
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
       }
     }
   }

@@ -1,3 +1,5 @@
+@import "../../media";
+
 .modalOpened {
   opacity: 1;
   position: fixed;
@@ -14,9 +16,13 @@
   pointer-events: all;
 
   .modalContent {
-    width: 20vw;
+    width: 30%;
     background-color: white;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
+
+    @include s {
+      width: 80%;
+    }
   }
 }
 
